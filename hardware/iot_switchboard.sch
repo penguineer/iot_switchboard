@@ -194,16 +194,12 @@ Wire Wire Line
 	4100 4050 4300 4050
 Connection ~ 4100 4050
 Wire Wire Line
-	6400 3350 7400 3350
-Wire Wire Line
-	6400 3250 7400 3250
-Wire Wire Line
 	6400 4050 7400 4050
 $Comp
-L R R5
+L R R3
 U 1 1 58C89309
 P 7050 3850
-F 0 "R5" V 7130 3850 50  0000 C CNN
+F 0 "R3" V 7130 3850 50  0000 C CNN
 F 1 "10K" V 7050 3850 50  0000 C CNN
 F 2 "Resistors_SMD:R_0603_HandSoldering" V 6980 3850 50  0001 C CNN
 F 3 "" H 7050 3850 50  0000 C CNN
@@ -231,9 +227,9 @@ Text GLabel 6550 3750 2    47   Output ~ 0
 LED1
 Text GLabel 6550 3850 2    47   Output ~ 0
 LED2
-Text GLabel 6550 3050 2    47   Input ~ 0
+Text GLabel 6550 2850 2    47   Input ~ 0
 SW1
-Text GLabel 6550 2950 2    47   Input ~ 0
+Text GLabel 6550 3550 2    47   Input ~ 0
 SW2
 Text GLabel 1050 2050 0    47   Output ~ 0
 SW1
@@ -241,11 +237,11 @@ Text GLabel 1050 3750 0    47   Output ~ 0
 SW2
 Text GLabel 7400 4050 2    47   Input ~ 0
 RST
-Text GLabel 7400 3250 2    47   BiDi ~ 0
+Text GLabel 6550 3250 2    47   BiDi ~ 0
 SCL
-Text GLabel 7400 3350 2    47   BiDi ~ 0
+Text GLabel 6550 3350 2    47   BiDi ~ 0
 INT
-Text GLabel 7400 3450 2    47   BiDi ~ 0
+Text GLabel 6550 3450 2    47   BiDi ~ 0
 SDA
 $Comp
 L VCC #PWR06
@@ -288,16 +284,12 @@ F 3 "" H 9300 3850 50  0000 C CNN
 	-1   0    0    -1  
 $EndComp
 Wire Wire Line
-	9500 3650 9650 3650
-Wire Wire Line
-	9500 3750 9650 3750
-Wire Wire Line
 	9500 3850 9650 3850
 Wire Wire Line
 	9500 4050 9650 4050
-Text GLabel 9650 3650 2    47   BiDi ~ 0
-SDA
 Text GLabel 9650 3750 2    47   BiDi ~ 0
+SDA
+Text GLabel 9650 3650 2    47   BiDi ~ 0
 SCL
 Text GLabel 9650 3850 2    47   BiDi ~ 0
 INT
@@ -391,17 +383,11 @@ F 3 "" H 5350 3450 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	6550 2950 6400 2950
-Wire Wire Line
-	6550 3050 6400 3050
-Wire Wire Line
 	6400 3750 6550 3750
 Wire Wire Line
 	6400 3850 6550 3850
 Text GLabel 9700 3200 2    47   Input ~ 0
 RST
-Wire Wire Line
-	6400 3450 7400 3450
 Wire Wire Line
 	1700 1850 1700 1650
 Wire Wire Line
@@ -425,4 +411,81 @@ F 3 "" H 9300 3200 50  0000 C CNN
 $EndComp
 Wire Wire Line
 	9500 3200 9700 3200
+Wire Wire Line
+	6400 2850 6550 2850
+Wire Wire Line
+	6400 3550 6550 3550
+Wire Wire Line
+	9500 3650 9650 3650
+Wire Wire Line
+	9500 3750 9650 3750
+$Comp
+L R R6
+U 1 1 58F21A9A
+P 6650 2950
+F 0 "R6" V 6600 3150 50  0000 C CNN
+F 1 "0" V 6650 2950 50  0000 C CNN
+F 2 "Resistors_SMD:R_0402" V 6580 2950 50  0001 C CNN
+F 3 "" H 6650 2950 50  0000 C CNN
+	1    6650 2950
+	0    1    1    0   
+$EndComp
+$Comp
+L R R5
+U 1 1 58F21B1B
+P 6650 3050
+F 0 "R5" V 6600 3250 50  0000 C CNN
+F 1 "0" V 6650 3050 50  0000 C CNN
+F 2 "Resistors_SMD:R_0402" V 6580 3050 50  0001 C CNN
+F 3 "" H 6650 3050 50  0000 C CNN
+	1    6650 3050
+	0    1    1    0   
+$EndComp
+$Comp
+L R R4
+U 1 1 58F21B68
+P 6650 3150
+F 0 "R4" V 6600 3350 50  0000 C CNN
+F 1 "0" V 6650 3150 50  0000 C CNN
+F 2 "Resistors_SMD:R_0402" V 6580 3150 50  0001 C CNN
+F 3 "" H 6650 3150 50  0000 C CNN
+	1    6650 3150
+	0    1    1    0   
+$EndComp
+$Comp
+L GND #PWR011
+U 1 1 58F21E46
+P 7050 3200
+F 0 "#PWR011" H 7050 2950 50  0001 C CNN
+F 1 "GND" H 7050 3050 50  0000 C CNN
+F 2 "" H 7050 3200 50  0000 C CNN
+F 3 "" H 7050 3200 50  0000 C CNN
+	1    7050 3200
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6800 3150 7050 3150
+Wire Wire Line
+	6800 3050 7050 3050
+Connection ~ 7050 3050
+Wire Wire Line
+	6800 2950 7050 2950
+Connection ~ 7050 2950
+Wire Wire Line
+	6400 2950 6500 2950
+Wire Wire Line
+	6400 3050 6500 3050
+Wire Wire Line
+	6400 3150 6500 3150
+Text Notes 6950 2900 0    60   ~ 0
+I2C Address
+Wire Wire Line
+	6400 3250 6550 3250
+Wire Wire Line
+	6400 3350 6550 3350
+Wire Wire Line
+	6400 3450 6550 3450
+Wire Wire Line
+	7050 2950 7050 3200
+Connection ~ 7050 3150
 $EndSCHEMATC
